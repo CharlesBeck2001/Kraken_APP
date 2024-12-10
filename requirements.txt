@@ -3,3 +3,4 @@ pandas
 krakenex
 requests
 numpy
+pytz
