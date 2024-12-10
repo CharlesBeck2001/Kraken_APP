@@ -115,8 +115,8 @@ def fetch_all_trade_data(pair, days_ago):
             return []
 
         # Calculate the starting timestamp for `days_ago`
-        start_time = datetime.utcnow() - timedelta(days=days_ago)
-        since = int(time.mktime(start_time.timetuple()) * 1_000_000_000)  # Convert to nanoseconds
+        start_time = datetime.now(datetime.timezone.utc) - timedelta(days=days_ago)
+        since = int(time.mktime(start_time.timetuple()) * 1_000_000_000) # Convert to nanoseconds
 
         all_trades = []
         
