@@ -209,7 +209,7 @@ filtered_pairs = [pair for pair in pair_list if pair.endswith('USD') or pair.end
 '''
 Kraken Data Dashboard
 
-Browse Kraken data by pair from the last two days of trading.
+Browse Kraken data by pair sampled from the last fourteen days of trading.
 
 '''
 
