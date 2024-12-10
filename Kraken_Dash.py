@@ -222,7 +222,7 @@ aggregated_data = []
 
 for pair in selected_pairs:
     
-    trades = fetch_all_trade_data(pair, 365)
+    trades = fetch_all_trade_data(pair, 2)
     if len(trades) > 0:
         
         trades_df = pd.DataFrame(trades)
