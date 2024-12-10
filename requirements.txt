@@ -1,7 +1,5 @@
 streamlit
 pandas
 krakenex
-datetime
-time
 requests
 numpy
