@@ -10,11 +10,12 @@ import streamlit as st
 import pandas as pd
 import krakenex
 #import mysql.connector
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 import time
 import requests
 #import matplotlib.pyplot as plt
 import numpy as np
+import pytz
 
 st.set_page_config(
     page_title='Kraken Trades Dashboard'
@@ -114,8 +115,10 @@ def fetch_all_trade_data(pair, days_ago):
             print(f"Pair {pair} not found in tradable asset pairs.")
             return []
 
+        utc_timezone = pytz.utc
+        
         # Calculate the starting timestamp for `days_ago`
-        start_time = datetime.now(datetime.timezone.utc) - timedelta(days=days_ago)
+        start_time = datetime.now(utc_timezone) - timedelta(days=days_ago)
         since = int(time.mktime(start_time.timetuple()) * 1_000_000_000) # Convert to nanoseconds
 
         all_trades = []
