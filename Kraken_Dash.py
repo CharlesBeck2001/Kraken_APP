@@ -10,7 +10,7 @@ import streamlit as st
 import pandas as pd
 import krakenex
 #import mysql.connector
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import time
 import requests
 #import matplotlib.pyplot as plt
